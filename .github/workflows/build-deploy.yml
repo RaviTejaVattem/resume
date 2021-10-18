@@ -28,4 +28,4 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.SECRET_FOR_WORKFLOW }}
         BRANCH: gh-pages
-        FOLDER: dist/resume
+        FOLDER: dist/
