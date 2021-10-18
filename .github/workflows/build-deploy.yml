@@ -26,6 +26,6 @@ jobs:
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
-        SECRET_FOR_WORKFLOW: ${{ secrets.SECRET_FOR_WORKFLOW }}
+        GITHUB_TOKEN: ${{ secrets.REPO_SECRET }}
         BRANCH: gh-pages
         FOLDER: dist/
