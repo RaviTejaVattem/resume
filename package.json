@@ -8,7 +8,7 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "deploy": "nx build --base-href=/resume/"
+    "deploy": "nx build --base-href=https://ravitejavattem.github.io/resume/"
   },
   "private": true,
   "dependencies": {
