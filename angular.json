@@ -11,7 +11,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "outputPath": "dist/apps/resume",
+            "outputPath": "dist",
             "index": "apps/resume/src/index.html",
             "main": "apps/resume/src/main.ts",
             "polyfills": "apps/resume/src/polyfills.ts",
