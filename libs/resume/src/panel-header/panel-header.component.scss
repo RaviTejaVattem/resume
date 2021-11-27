@@ -4,4 +4,14 @@
   .user-image {
     border-radius: 20px;
   }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  @media print {
+    .no-print {
+      display: none;
+    }
+  }
 }
