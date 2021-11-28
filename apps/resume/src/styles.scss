@@ -38,4 +38,8 @@ html, body {
     html, body {
         overflow: hidden;
     }
+
+    print {
+        display: none;
+    }
 }
