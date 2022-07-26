@@ -1,1 +1,1 @@
-Live website [ravitejavattem.github.io](https://ravitejavattem.github.io)
+Live website [ravitejavattem.github.io/resume](https://ravitejavattem.github.io/resume)
