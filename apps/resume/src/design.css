@@ -1,0 +1,27 @@
+@media screen {
+  :root { --accent: #b4552d; --paper: #fffdf8; background: #f1e9e2; }
+  .resume-sheet { max-width: 1150px; border-radius: 8px; }
+  .sidebar { background: #f7ede4; padding: 2.5rem 2rem; }
+  main { padding: 2.5rem 2.75rem; }
+  .intro { padding-bottom: 2rem; border-bottom: 2px solid #b4552d; margin-bottom: 2.5rem; }
+  .intro h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; letter-spacing: -.025em; }
+  .section-heading h2 { font-size: 1.15rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #7c3f22; }
+  .experience-entry { position: relative; padding-left: 1.75rem; margin-bottom: 2.25rem; }
+  .experience-entry::before { content: ""; position: absolute; left: 0; top: .45rem; width: .7rem; height: .7rem; border-radius: 50%; background: #b4552d; }
+  .experience-entry::after { content: ""; position: absolute; left: .3rem; top: 1.25rem; bottom: -1.5rem; width: 1px; background: #e0c4b4; }
+  .experience-entry:last-child::after { display: none; }
+  .company { color: #b4552d; font-weight: 700; }
+  .highlights { font-size: .9rem; }
+  .tags li { background: #f7ede4; border-radius: 4px; }
+  .education-entry { margin-bottom: 1.25rem; }
+  @media (max-width: 950px) {
+    .resume-sheet { grid-template-columns: 260px minmax(0, 1fr); }
+    .sidebar { padding: 2rem 1.5rem; }
+    main { padding: 2rem 1.75rem; }
+  }
+  @media (max-width: 650px) {
+    .resume-sheet { grid-template-columns: 1fr; }
+    main, .sidebar { padding: 2rem 1.25rem; }
+    .intro h2 { font-size: 2rem; }
+  }
+}
