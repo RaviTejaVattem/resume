@@ -12,12 +12,12 @@ import { SharedModule } from '../../../../libs/shared/src/shared.module';
   imports: [
     BrowserModule,
     FormsModule,
+    AppComponent,
     LayoutComponent,
     CoreModule,
     ResumeModule,
     SharedModule
   ],
-  declarations: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
