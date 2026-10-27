@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './body-section-header.component.html',
   styleUrls: ['./body-section-header.component.scss']
 })
-export class BodySectionHeaderComponent implements OnInit {
+export class BodySectionHeaderComponent {
   @Input() title = '';
   @Input() icon = '';
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ContentChild, TemplateRef, ElementRef } from '@angular/core';
+import { Component, Input, ContentChild, TemplateRef, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './content-header.component.html',
   styleUrls: ['./content-header.component.scss']
 })
-export class ContentHeaderComponent implements OnInit {
+export class ContentHeaderComponent {
   @Input() dates: string[] = [];
   @Input() subtitle = '';
   @Input() title = '';

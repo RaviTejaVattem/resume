@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { SharedModule } from '../../../../shared/src/shared.module';
+import { Component } from '@angular/core';
+import { SharedModule } from '../../../shared/src/shared.module';
 
 @Component({
   selector: 'languages',
@@ -8,4 +8,4 @@ import { SharedModule } from '../../../../shared/src/shared.module';
   templateUrl: './languages.component.html',
   styleUrls: ['./languages.component.scss']
 })
-export class LanguagesComponent implements OnInit {}
+export class LanguagesComponent {}
