@@ -27,8 +27,7 @@ const components = [
 ];
 
 @NgModule({
-  imports: [HttpClientModule, CommonModule, SharedModule],
-  declarations: [...components],
+  imports: [HttpClientModule, CommonModule, SharedModule, ...components],
   exports: [...components]
 })
 export class ResumeModule {}

@@ -19,8 +19,7 @@ const components = [
 ];
 
 @NgModule({
-  imports: [CommonModule, MatProgressBarModule],
-  declarations: [...components],
+  imports: [CommonModule, MatProgressBarModule, ...components],
   exports: [...components]
 })
 export class SharedModule {}

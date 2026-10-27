@@ -7,8 +7,7 @@ import { PrintComponent } from './print/print.component';
 const components = [PrintComponent];
 
 @NgModule({
-  imports: [CommonModule, MatIconModule],
-  declarations: [...components],
+  imports: [CommonModule, MatIconModule, ...components],
   exports: [...components]
 })
 export class CoreModule {}
