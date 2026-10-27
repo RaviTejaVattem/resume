@@ -1,0 +1,27 @@
+@media screen {
+  :root { --accent: #111111; --paper: #ffffff; background: #f3f3f0; }
+  body { color: #111; }
+  .resume-sheet { max-width: 1100px; border: 3px solid #111; border-radius: 0; box-shadow: 10px 10px 0 #111; }
+  .sidebar { background: #111; color: #fff; padding: 2.5rem 1.75rem; }
+  .sidebar a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+  main { padding: 3rem 2.5rem; }
+  .intro { padding-bottom: 2rem; border-bottom: 4px solid #111; margin-bottom: 2.5rem; }
+  .intro h2 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: .95; letter-spacing: -.05em; text-transform: uppercase; }
+  .section-heading h2 { font-size: 1.25rem; font-weight: 900; text-transform: uppercase; letter-spacing: .05em; border-bottom: 3px solid #111; padding-bottom: .35rem; }
+  .experience-entry { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 2px solid #111; }
+  .company { font-weight: 800; text-transform: uppercase; letter-spacing: .04em; }
+  .highlights, .interests { font-size: .92rem; }
+  .tags { gap: .5rem; }
+  .tags li { background: #fff; border: 2px solid #111; border-radius: 0; font-weight: 700; text-transform: uppercase; font-size: .72rem; padding: .35rem .6rem; }
+  .education-entry { margin-bottom: 1.5rem; }
+  @media (max-width: 950px) {
+    .resume-sheet { grid-template-columns: 260px minmax(0, 1fr); box-shadow: 7px 7px 0 #111; }
+    .sidebar { padding: 2rem 1.5rem; }
+    main { padding: 2.5rem 1.75rem; }
+  }
+  @media (max-width: 650px) {
+    .resume-sheet { grid-template-columns: 1fr; box-shadow: 5px 5px 0 #111; }
+    main, .sidebar { padding: 2rem 1.25rem; }
+    .intro h2 { font-size: 2.5rem; }
+  }
+}
