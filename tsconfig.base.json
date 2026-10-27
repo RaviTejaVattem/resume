@@ -4,7 +4,7 @@
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
@@ -15,7 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {},
-    "ignoreDeprecations": "6.0",
     "esModuleInterop": true
   },
   "exclude": ["node_modules", "tmp"]
