@@ -12,7 +12,7 @@
         "index": "apps/resume/src/index.html",
         "browser": "apps/resume/src/main.ts",
         "tsConfig": "apps/resume/tsconfig.app.json",
-        "styles": ["apps/resume/src/styles.css"]
+        "styles": ["apps/resume/src/styles.css", "apps/resume/src/print.css"]
       },
       "configurations": {
         "production": {
