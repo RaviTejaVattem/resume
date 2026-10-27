@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from '../../shared/src/shared.module';
@@ -12,8 +11,8 @@ import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import { SoftwareComponent } from './software/software.component';
 import { LanguagesComponent } from './languages/languages.component';
 import { ExperienceComponent } from './experience/experience.component';
-import { EducationComponent } from './education/education.component'; 
-import { HobbiesInterestsComponent } from './hobbies-interests/hobbies-interests.component'; 
+import { EducationComponent } from './education/education.component';
+import { HobbiesInterestsComponent } from './hobbies-interests/hobbies-interests.component';
 
 const components = [
   SkillsComponent,
@@ -28,14 +27,8 @@ const components = [
 ];
 
 @NgModule({
-  imports: [
-    HttpClientModule,
-    CommonModule,
-    FlexLayoutModule,
-
-    SharedModule
-  ],
-  declarations: [... components],
-  exports: [... components]
+  imports: [HttpClientModule, CommonModule, SharedModule],
+  declarations: [...components],
+  exports: [...components]
 })
-export class ResumeModule { }
+export class ResumeModule {}

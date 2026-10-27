@@ -1,4 +1,4 @@
-import { Component, OnChanges, Input, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, Input, SimpleChange } from '@angular/core';
 
 @Component({
   selector: 'progress-bar',
@@ -6,15 +6,12 @@ import { Component, OnChanges, Input, SimpleChanges } from '@angular/core';
   styleUrls: ['./progress-bar.component.scss']
 })
 export class ProgressBarComponent implements OnChanges {
+  @Input() category = '';
+  @Input() value = 50;
 
-  @Input() category: string = '';
-  @Input() value: number = 50;
+  description = 'Good';
 
-  description: string = 'Good';
-
-  constructor() { }
-
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: { value?: SimpleChange }) {
     if (changes.value) {
       if (this.value === 100) {
         this.description = 'Expert';
@@ -24,10 +21,9 @@ export class ProgressBarComponent implements OnChanges {
         this.description = 'Intermediate';
       } else if (this.value >= 40) {
         this.description = 'Good';
-      } else if (this.value < 40) {
+      } else {
         this.description = 'Basic';
       }
     }
   }
-
 }

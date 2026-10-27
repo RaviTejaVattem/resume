@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { PanelSectionHeaderComponent } from './layout/panel-section-header/panel-section-header.component';
@@ -17,15 +16,11 @@ const components = [
   BodySectionHeaderComponent,
   ContentHeaderComponent,
   TechnologiesUsedComponent
-]
+];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    MatProgressBarModule
-  ],
-  declarations: [... components],
-  exports: [... components]
+  imports: [CommonModule, MatProgressBarModule],
+  declarations: [...components],
+  exports: [...components]
 })
-export class SharedModule { }
+export class SharedModule {}
