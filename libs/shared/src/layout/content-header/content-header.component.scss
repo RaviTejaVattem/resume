@@ -1,14 +1,13 @@
-.date-container {
-    margin-top: .3em;
-    min-width: 105px;
-    text-align: right;
+.dates-mobile {
+  display: none;
 }
 
-h3 {
-    margin-bottom: 0;
-}
+@media (max-width: 599px) {
+  .dates {
+    display: none;
+  }
 
-h4 {
-    margin: 0;
-    font-weight: normal;
+  .dates-mobile {
+    display: block;
+  }
 }
