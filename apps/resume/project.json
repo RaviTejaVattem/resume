@@ -12,13 +12,10 @@
         "index": "apps/resume/src/index.html",
         "browser": "apps/resume/src/main.ts",
         "tsConfig": "apps/resume/tsconfig.app.json",
-        "styles": ["apps/resume/src/styles.css", "apps/resume/src/print.css"]
+        "styles": ["apps/resume/src/styles.css", "apps/resume/src/design.css", "apps/resume/src/print.css"]
       },
       "configurations": {
-        "production": {
-          "outputHashing": "all",
-          "budgets": [{ "type": "initial", "maximumWarning": "500kB", "maximumError": "1MB" }]
-        },
+        "production": { "outputHashing": "all", "budgets": [{ "type": "initial", "maximumWarning": "500kB", "maximumError": "1MB" }] },
         "development": { "optimization": false, "sourceMap": true }
       },
       "defaultConfiguration": "production"

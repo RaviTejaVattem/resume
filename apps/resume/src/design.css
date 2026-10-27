@@ -1,0 +1,24 @@
+@media screen {
+  :root { --accent: #22685f; --paper: #fffefa; background: #e9eeea; }
+  .resume-sheet { grid-template-columns: 310px minmax(0, 1fr); border-radius: 6px; }
+  .sidebar { background: #163c39; padding: 3rem 2.25rem; }
+  main { padding: 3.5rem; }
+  .intro { padding-bottom: 2.5rem; }
+  .intro h2 { font-family: Georgia, 'Times New Roman', serif; font-weight: 500; font-size: clamp(2.3rem, 4vw, 3.3rem); letter-spacing: -.035em; }
+  .section-heading h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 1.45rem; font-weight: 500; }
+  .experience-entry { border-left: 1px solid #c5d8cb; padding-left: 1.4rem; margin-bottom: 2.5rem; }
+  .company { letter-spacing: .035em; }
+  .highlights, .interests { font-size: .88rem; }
+  .tags li { background: #eaf0e8; border-radius: 3px; }
+  .education-entry { padding-bottom: 1rem; }
+  @media (max-width: 950px) {
+    .resume-sheet { grid-template-columns: 250px minmax(0, 1fr); }
+    .sidebar { padding: 2.25rem 1.5rem; }
+    main { padding: 2.5rem 1.75rem; }
+  }
+  @media (max-width: 650px) {
+    .resume-sheet { grid-template-columns: 1fr; }
+    main, .sidebar { padding: 2rem 1.5rem; }
+    .intro h2 { font-size: 2.4rem; }
+  }
+}
