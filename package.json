@@ -38,6 +38,6 @@
     "@nx/jest": "^24.0.1",
     "@nx/workspace": "^24.0.1",
     "nx": "^24.0.1",
-    "typescript": "~5.9.3"
+    "typescript": "~6.0.3"
   }
 }
