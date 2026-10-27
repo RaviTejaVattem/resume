@@ -1,0 +1,26 @@
+@media screen {
+  :root { --accent: #4f46e5; --paper: rgba(255, 255, 255, .78); background: linear-gradient(135deg, #eef2ff, #f5f3ff 45%, #ecfeff); }
+  body { color: #1e293b; }
+  .resume-sheet { max-width: 1150px; border: 1px solid rgba(255, 255, 255, .7); border-radius: 22px; background: rgba(255, 255, 255, .72); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); box-shadow: 0 24px 60px rgba(79, 70, 229, .14); }
+  .sidebar { background: rgba(255, 255, 255, .55); border-right: 1px solid rgba(255, 255, 255, .8); padding: 2.75rem 2rem; }
+  main { padding: 3rem 2.75rem; }
+  .intro { padding-bottom: 2rem; margin-bottom: 2.5rem; border-bottom: 1px solid rgba(79, 70, 229, .16); }
+  .intro h2 { font-size: clamp(2.1rem, 4vw, 3rem); font-weight: 750; letter-spacing: -.03em; color: #312e81; }
+  .contact-list a, .sidebar a { color: #4f46e5; }
+  .section-heading h2 { color: #4338ca; font-size: 1.1rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+  .experience-entry { background: rgba(255, 255, 255, .58); border: 1px solid rgba(255, 255, 255, .75); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 10px 30px rgba(15, 23, 42, .06); }
+  .company { color: #4f46e5; font-weight: 700; }
+  .highlights, .interests { color: #475569; font-size: .92rem; }
+  .tags li { background: rgba(79, 70, 229, .1); color: #3730a3; border: 1px solid rgba(79, 70, 229, .18); border-radius: 999px; }
+  .education-entry { background: rgba(255, 255, 255, .58); border: 1px solid rgba(255, 255, 255, .75); border-radius: 16px; padding: 1.25rem; margin-bottom: 1rem; }
+  @media (max-width: 950px) {
+    .resume-sheet { grid-template-columns: 270px minmax(0, 1fr); }
+    .sidebar { padding: 2.25rem 1.5rem; }
+    main { padding: 2.5rem 1.75rem; }
+  }
+  @media (max-width: 650px) {
+    .resume-sheet { grid-template-columns: 1fr; border-radius: 18px; }
+    main, .sidebar { padding: 2rem 1.25rem; }
+    .intro h2 { font-size: 2.1rem; }
+  }
+}
