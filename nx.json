@@ -1,38 +1,9 @@
 {
-  "npmScope": "resume",
-  "affected": {
-    "defaultBase": "master"
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": { "cache": true, "inputs": ["default"] }
   },
-  "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
-    ".eslintrc.json": "*"
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
-    }
-  },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
-  },
-  "projects": {
-    "resume": {
-      "tags": []
-    },
-    "resume-e2e": {
-      "tags": [],
-      "implicitDependencies": ["resume"]
-    }
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "{workspaceRoot}/tsconfig.base.json", "{workspaceRoot}/package.json", "{workspaceRoot}/package-lock.json"]
   }
 }

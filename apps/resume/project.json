@@ -1,0 +1,35 @@
+{
+  "name": "resume",
+  "root": "apps/resume",
+  "sourceRoot": "apps/resume/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@angular/build:application",
+      "outputs": ["{workspaceRoot}/dist/resume"],
+      "options": {
+        "outputPath": "dist/resume",
+        "index": "apps/resume/src/index.html",
+        "browser": "apps/resume/src/main.ts",
+        "tsConfig": "apps/resume/tsconfig.app.json",
+        "styles": ["apps/resume/src/styles.css"]
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "all",
+          "budgets": [{ "type": "initial", "maximumWarning": "500kB", "maximumError": "1MB" }]
+        },
+        "development": { "optimization": false, "sourceMap": true }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular/build:dev-server",
+      "configurations": {
+        "development": { "buildTarget": "resume:build:development" },
+        "production": { "buildTarget": "resume:build:production" }
+      },
+      "defaultConfiguration": "development"
+    }
+  }
+}

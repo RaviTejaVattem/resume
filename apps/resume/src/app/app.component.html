@@ -1,44 +1,75 @@
-<layout>
-  <ng-template #sideTemplate>
-    <panel-header></panel-header>
-
-    <panel-section-header title="Personal Info" icon="material-icon personal-info-icon"></panel-section-header>
-    <panel-section-content>
-      <personal-info></personal-info>
-    </panel-section-content>
-
-    <panel-section-header title="Skills" icon="material-icon personal-info-icon"></panel-section-header>
-    <panel-section-content>
-      <skills></skills>
-    </panel-section-content>
-
-    <panel-section-header title="Software" icon="material-icon personal-info-icon"></panel-section-header>
-    <panel-section-content>
-      <software></software>
-    </panel-section-content>
-
-    <panel-section-header title="Languages" icon="material-icon personal-info-icon"></panel-section-header>
-    <panel-section-content>
-      <languages></languages>
-    </panel-section-content>
-
-
-  </ng-template>
-  <ng-template #contentTemplate>
-    <body-header></body-header>
-
-    <body-section-header title="Experience" icon="icon experience-icon"></body-section-header>
-    <experience></experience>
-
-    <body-section-header title="Education" icon="icon education-icon"></body-section-header>
-    <education></education>
-
-    <br>
-    <body-section-header title="Hobbies and Interests" icon="material-icon personal-projects-icon">
-    </body-section-header>
-    <hobbies-interests></hobbies-interests>
-
-  </ng-template>
-</layout>
-
-<print class="print"></print>
+<a class="skip-link" href="#main">Skip to resume content</a>
+<div class="toolbar">
+  <a class="wordmark" href="#profile">RV<span> / RESUME</span></a>
+  <button type="button" (click)="printResume()">Print / Save PDF <span aria-hidden="true">↗</span></button>
+</div>
+<div class="resume-sheet">
+  <aside class="sidebar" aria-label="Profile and skills">
+    <header id="profile">
+      <div class="avatar">
+        @if (!avatarFailed()) {
+          <img src="https://github.com/ravitejavattem.png?size=192" width="88" height="88" alt="Leela Ravi Teja Vattem" (error)="avatarFailed.set(true)">
+        } @else {
+          <span role="img" aria-label="Profile initials">{{ initials() }}</span>
+        }
+      </div>
+      <p class="eyebrow">SOFTWARE ENGINEER</p>
+      <h1>{{ resume.name }}</h1>
+      <p class="roles">{{ resume.roles.join(' · ') }}</p>
+    </header>
+    <section aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <address>
+        <span>{{ resume.location }}</span>
+        <a [href]="'mailto:' + resume.email">{{ resume.email }}</a>
+        <a [href]="resume.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+        <a [href]="resume.github" target="_blank" rel="noopener noreferrer">GitHub · Ravi Teja Vattem <span aria-hidden="true">↗</span></a>
+      </address>
+    </section>
+    <section aria-labelledby="strengths-title">
+      <h2 id="strengths-title">Strengths</h2>
+      <ul class="strengths">@for (strength of resume.strengths; track strength) { <li>{{ strength }}</li> }</ul>
+    </section>
+    <section aria-labelledby="software-title">
+      <h2 id="software-title">Software & tools</h2>
+      <resume-skill-list [skills]="resume.software" />
+    </section>
+    <section aria-labelledby="languages-title">
+      <h2 id="languages-title">Programming languages</h2>
+      <resume-skill-list [skills]="resume.languages" />
+    </section>
+  </aside>
+  <main id="main" tabindex="-1">
+    <section class="intro" aria-labelledby="intro-title">
+      <p class="eyebrow">PROFILE / OVERVIEW</p>
+      <h2 id="intro-title">Thoughtful engineering.<br><span>Meaningful experiences.</span></h2>
+      <p>{{ resume.summary }}</p>
+    </section>
+    <section class="main-section" aria-labelledby="experience-title">
+      <div class="section-heading"><span aria-hidden="true">01</span><h2 id="experience-title">Experience</h2></div>
+      @for (job of resume.experience; track job.company) {
+        <article class="experience-entry">
+          <div class="entry-topline"><p class="company">{{ job.company }}</p><p class="period">{{ job.period }}</p></div>
+          <h3>{{ job.role }}</h3>
+          <ul class="tags" aria-label="Technologies">@for (technology of job.technologies; track technology) { <li>{{ technology }}</li> }</ul>
+          <ul class="highlights">@for (highlight of job.highlights; track $index) { <li>{{ highlight }}</li> }</ul>
+        </article>
+      }
+    </section>
+    <section class="main-section" aria-labelledby="education-title">
+      <div class="section-heading"><span aria-hidden="true">02</span><h2 id="education-title">Education</h2></div>
+      @for (item of resume.education; track item.institution) {
+        <article class="education-entry">
+          <p class="period">{{ item.period }}</p>
+          <h3>{{ item.institution }}</h3>
+          <p>{{ item.qualification }} <span class="result">{{ item.result }}</span></p>
+        </article>
+      }
+    </section>
+    <section class="main-section" aria-labelledby="interests-title">
+      <div class="section-heading"><span aria-hidden="true">03</span><h2 id="interests-title">Beyond the code</h2></div>
+      <ul class="interests">@for (interest of resume.interests; track interest) { <li>{{ interest }}</li> }</ul>
+    </section>
+    <footer>{{ resume.name }} <span>Built with care.</span></footer>
+  </main>
+</div>
