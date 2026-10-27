@@ -1,11 +1,27 @@
-<div class="dates" fxHide.xs="true">
-  <div *ngFor="let date of dates">{{ date }}</div>
+<div class="content-header">
+  <div class="date-container dates-desktop">
+    @for (date of dates; track $index) {
+      <div>{{ date }}</div>
+    }
+  </div>
+  <div class="entry-content">
+    <div class="entry-heading">
+      <div>
+        <h3>{{ title }}</h3>
+        @if (subtitle || subTitleTemplate || technologies) {
+          <h4>
+            {{ subtitle }}
+            <ng-container [ngTemplateOutlet]="subTitleTemplate"></ng-container>
+            <ng-container [ngTemplateOutlet]="technologies"></ng-container>
+          </h4>
+        }
+      </div>
+      <div class="date-container dates-mobile">
+        @for (date of dates; track $index) {
+          <span>{{ date }}</span>
+        }
+      </div>
+    </div>
+    <ng-content></ng-content>
+  </div>
 </div>
-
-<div class="dates-mobile">
-  <span *ngFor="let date of dates">{{ date }}</span>
-</div>
-
-<h4 *ngIf="subtitle || subTitleTemplate">
-  <ng-content select="[subtitle]"></ng-content>
-</h4>

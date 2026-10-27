@@ -1,13 +1,14 @@
-.dates-mobile {
-  display: none;
-}
-
-@media (max-width: 599px) {
-  .dates {
-    display: none;
-  }
-
-  .dates-mobile {
-    display: block;
-  }
+.content-header { display: flex; align-items: flex-start; gap: 20px; }
+.date-container { margin-top: .3em; min-width: 105px; text-align: right; }
+.dates-desktop { flex: 0 0 105px; }
+.entry-content { flex: 1; min-width: 0; }
+.entry-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.dates-mobile { display: none; }
+h3 { margin-bottom: 0; }
+h4 { margin: 0; font-weight: normal; }
+@media screen and (max-width: 599px) {
+  .content-header { flex-direction: column; }
+  .dates-desktop { display: none; }
+  .entry-content { width: 100%; }
+  .dates-mobile { display: block; }
 }
