@@ -1,21 +1,18 @@
-import { Component, OnInit, Input, ContentChild, TemplateRef, ElementRef } from '@angular/core';
+import { Component, Input, ContentChild, TemplateRef, ElementRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'content-header',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './content-header.component.html',
   styleUrls: ['./content-header.component.scss']
 })
-export class ContentHeaderComponent implements OnInit {
+export class ContentHeaderComponent {
   @Input() dates: string[] = [];
-  @Input() subtitle: string = '';
-  @Input() title: string = '';
-  
-  @ContentChild('subTitleTemplate') subTitleTemplate: TemplateRef<ElementRef> = <TemplateRef<ElementRef>>{};
-  @ContentChild('technologies') technologies: TemplateRef<ElementRef> = <TemplateRef<ElementRef>>{};
+  @Input() subtitle = '';
+  @Input() title = '';
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  @ContentChild('subTitleTemplate') subTitleTemplate!: TemplateRef<ElementRef>;
+  @ContentChild('technologies') technologies!: TemplateRef<ElementRef>;
 }

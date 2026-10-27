@@ -2,22 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { LayoutComponent } from './layout/layout.component';
 import { PrintComponent } from './print/print.component';
 
-const components = [
-  LayoutComponent,
-  PrintComponent
-]
+const components = [PrintComponent];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    MatIconModule
-  ],
-  declarations: [...components],
+  imports: [CommonModule, MatIconModule, ...components],
   exports: [...components]
 })
-export class CoreModule { }
+export class CoreModule {}

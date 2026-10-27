@@ -1,24 +1,21 @@
 import {
+  ChangeDetectionStrategy,
   Component,
-  OnInit,
   ContentChild,
-  TemplateRef,
-  ElementRef
+  ElementRef,
+  TemplateRef
 } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'layout',
+  standalone: true,
+  imports: [NgTemplateOutlet],
   templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss']
+  styleUrls: ['./layout.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LayoutComponent implements OnInit {
-
-  @ContentChild('sideTemplate') sideTemplate: TemplateRef<ElementRef> = <any>{};
-  @ContentChild('contentTemplate') contentTemplate: TemplateRef<ElementRef> = <any>{};
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class LayoutComponent {
+  @ContentChild('sideTemplate') sideTemplate!: TemplateRef<ElementRef>;
+  @ContentChild('contentTemplate') contentTemplate!: TemplateRef<ElementRef>;
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 
 @Component({
   selector: 'body-header',
@@ -7,19 +7,11 @@ import * as dayjs from 'dayjs';
   styleUrls: ['./body-header.component.scss']
 })
 export class BodyHeaderComponent implements OnInit {
+  yearsOfExperience = '';
 
-  totalExperience = '';
-
-  constructor() {
+  ngOnInit(): void {
     const joiningDate = dayjs('2015-01-26');
     const today = dayjs();
-    const monthsOfExperience: number = today.diff(joiningDate, 'month');
-    const years = Math.floor(monthsOfExperience / 12);
-    const months = monthsOfExperience % 12;
-
-    this.totalExperience = months ? `${years}.${months}` : years.toString();
+    this.yearsOfExperience = `${today.diff(joiningDate, 'year')}+`;
   }
-
-  ngOnInit() { }
-
 }
