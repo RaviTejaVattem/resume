@@ -1,7 +1,11 @@
 import { Component, OnChanges, Input, SimpleChange } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'progress-bar',
+  standalone: true,
+  imports: [CommonModule, MatProgressBarModule],
   templateUrl: './progress-bar.component.html',
   styleUrls: ['./progress-bar.component.scss']
 })

@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-    selector: 'print',
-    templateUrl: './print.component.html',
-    styleUrls: ['./print.component.scss']
+  selector: 'print',
+  standalone: true,
+  imports: [MatIconModule],
+  templateUrl: './print.component.html',
+  styleUrls: ['./print.component.scss']
 })
 export class PrintComponent implements OnInit {
-
-    constructor() { }
-
-    ngOnInit() {
-    }
-
-    printPage() {
-        window.print();
-    }
-
+  printPage(): void {
+    window.print();
+  }
 }
