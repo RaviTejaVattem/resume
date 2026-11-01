@@ -7,7 +7,8 @@ export const resume = {
   email: 'leelaravitejav@gmail.com',
   github: 'https://github.com/ravitejavattem',
   linkedin: 'https://www.linkedin.com/in/leela-ravi-teja-vattem-7860ab92',
-  summary: 'Lead Engineer with 11+ years of experience delivering enterprise web applications with Angular, TypeScript and Node.js. Leads a team of four on the Direct Line Group insurance websites (now part of Aviva) and works with backend teams on API contracts and integration issues. Previously led UI development for a clinical patient-workflow product. Focused on maintainable architecture, strongly typed, well-tested code and dependable delivery.',
+  careerStart: '2015-01-01',
+  summary: 'Lead Engineer with {years}+ years of experience delivering enterprise web applications with Angular, TypeScript and Node.js. Leads a team of four on the Direct Line Group insurance websites (now part of Aviva) and works with backend teams on API contracts and integration issues. Previously led UI development for a clinical patient-workflow product. Focused on maintainable architecture, strongly typed, well-tested code and dependable delivery.',
   strengths: ['Technical leadership', 'Code review and best practices', 'Clear communication', 'Self-directed learning', 'Agile delivery'],
   skills: [
     { name: 'Frontend', items: ['Angular', 'Signals', 'Strictly typed forms', 'NgRx', 'RxJS', 'Svelte', 'React', 'HTML5/CSS3'] },

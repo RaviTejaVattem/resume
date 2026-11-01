@@ -37,6 +37,7 @@ export interface Resume {
   readonly email: string;
   readonly github: string;
   readonly linkedin: string;
+  readonly careerStart: string;
   readonly summary: string;
   readonly strengths: readonly string[];
   readonly skills: readonly SkillGroup[];

@@ -3,9 +3,14 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import ts from 'typescript';
 
-const source = await readFile(new URL('../apps/resume/src/app/data/resume.data.ts', import.meta.url), 'utf8');
-const { outputText } = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } });
-const { resume } = await import(`data:text/javascript;base64,${Buffer.from(outputText).toString('base64')}`);
+async function load(relativePath) {
+  const source = await readFile(new URL(relativePath, import.meta.url), 'utf8');
+  const { outputText } = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } });
+  return import(`data:text/javascript;base64,${Buffer.from(outputText).toString('base64')}`);
+}
+
+const { resume } = await load('../apps/resume/src/app/data/resume.data.ts');
+const { yearsSince } = await load('../apps/resume/src/app/data/experience-years.ts');
 
 test('contains all expected resume sections', () => {
   assert.equal(resume.name, 'Leela Ravi Teja Vattem');
@@ -17,6 +22,18 @@ test('contains all expected resume sections', () => {
   assert.equal(resume.strengths.length, 5);
   assert.equal(resume.interests.length, 3);
   assert.deepEqual(resume.experience.map((job) => job.highlights.length), [9, 5, 3, 3]);
+});
+
+test('years of experience are computed, not hardcoded', () => {
+  assert.match(resume.careerStart, /^\d{4}-\d{2}-\d{2}$/);
+  assert.ok(resume.summary.includes('{years}'));
+  assert.ok(!/\b\d+\+ years of experience/.test(resume.summary));
+  assert.equal(yearsSince('2015-01-01', new Date(2026, 10, 1)), 11);
+  assert.equal(yearsSince('2015-01-01', new Date(2026, 11, 31)), 11);
+  assert.equal(yearsSince('2015-01-01', new Date(2027, 0, 1)), 12);
+  assert.equal(yearsSince('2015-01-01', new Date(2014, 5, 1)), 0);
+  assert.equal(yearsSince('2015-06-15', new Date(2026, 5, 14)), 10);
+  assert.equal(yearsSince('2015-06-15', new Date(2026, 5, 15)), 11);
 });
 
 test('keeps content within the two-page print budget', () => {

@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 import { SkillListComponent } from './components/skill-list.component';
+import { yearsSince } from './data/experience-years';
 import { resume } from './data/resume.data';
 
 @Component({
@@ -10,6 +11,7 @@ import { resume } from './data/resume.data';
 })
 export class AppComponent {
   readonly resume = resume;
+  readonly summary = resume.summary.replace('{years}', String(yearsSince(resume.careerStart)));
   readonly avatarFailed = signal(false);
   readonly initials = computed(() => this.resume.name.split(' ').map((part) => part[0]).slice(0, 2).join(''));
 
