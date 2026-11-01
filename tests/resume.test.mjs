@@ -11,12 +11,18 @@ test('contains all expected resume sections', () => {
   assert.equal(resume.name, 'Leela Ravi Teja Vattem');
   assert.equal(resume.location, 'London, United Kingdom');
   assert.equal(resume.experience.length, 4);
-  assert.equal(resume.education.length, 3);
+  assert.equal(resume.education.length, 1);
   assert.equal(resume.software.length, 8);
   assert.equal(resume.languages.length, 4);
   assert.equal(resume.strengths.length, 5);
-  assert.equal(resume.interests.length, 11);
+  assert.equal(resume.interests.length, 4);
   assert.deepEqual(resume.experience.map((job) => job.highlights.length), [7, 5, 3, 3]);
+});
+
+test('keeps content within the two-page print budget', () => {
+  assert.ok(resume.interests.length <= 4);
+  assert.ok(resume.education.length <= 1);
+  assert.ok(resume.experience.every((job) => job.technologies.length > 0));
 });
 
 test('employment history is current and in order', () => {

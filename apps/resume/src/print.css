@@ -63,11 +63,11 @@
   .strengths li { padding: 0; font-size: 9pt; }
 
   resume-skill-list { display: block; min-width: 0; }
-  .skill-list { display: grid; gap: .8mm; }
-  .skill-list li { break-inside: avoid; }
-  .skill-label { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3mm; font-size: 9pt; line-height: 1.35; }
-  .skill-label > span { overflow-wrap: anywhere; }
-  .skill-label small { font-size: 8.5pt; color: var(--muted); white-space: normal; text-align: right; }
+  .skill-list { display: block; font-size: 9pt; line-height: 1.4; }
+  .skill-list li { display: inline; }
+  .skill-list li:not(:last-child)::after { content: ', '; }
+  .skill-label { display: inline; font-size: 9pt; }
+  .skill-label small { display: none; }
   meter { display: none; }
 
   main { padding: 4mm 0 0; }
