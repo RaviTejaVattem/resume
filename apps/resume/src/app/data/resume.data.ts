@@ -9,21 +9,11 @@ export const resume = {
   linkedin: 'https://www.linkedin.com/in/leela-ravi-teja-vattem-7860ab92',
   summary: 'Lead engineer with 11+ years of experience delivering enterprise web applications and services with Angular, TypeScript and Node.js. Currently leads a team of four on the front end of the Direct Line Group insurance websites, now part of Aviva, and works closely with backend teams to agree API contracts and resolve integration issues. Previously led UI development for a clinical patient-workflow product. Committed to maintainable architecture, strongly typed and well-tested code, and dependable delivery.',
   strengths: ['Technical leadership', 'Code review and best practices', 'Clear communication', 'Self-directed learning', 'Agile delivery'],
-  software: [
-    { name: 'Angular', value: 80 },
-    { name: 'React', value: 50 },
-    { name: 'NodeJS/Express', value: 60 },
-    { name: 'SQL', value: 80 },
-    { name: 'Git', value: 90 },
-    { name: 'CI/CD', value: 50 },
-    { name: 'Linux/Unix', value: 50 },
-    { name: 'Spring', value: 30 },
-  ],
-  languages: [
-    { name: 'JavaScript/TypeScript', value: 80 },
-    { name: 'CSS3/HTML5', value: 60 },
-    { name: 'Java', value: 50 },
-    { name: 'Python', value: 40 },
+  skills: [
+    { name: 'Frontend', items: ['Angular', 'Signals', 'Strictly typed forms', 'NgRx', 'RxJS', 'Svelte', 'React', 'HTML5/CSS3'] },
+    { name: 'Backend & data', items: ['Node.js', 'NestJS', 'Express', 'REST APIs', 'Spring', 'SQL', 'PostgreSQL'] },
+    { name: 'Languages', items: ['TypeScript', 'JavaScript', 'Java', 'Python'] },
+    { name: 'Tooling & integrations', items: ['Git', 'Nx', 'CI/CD', 'Tealium', 'Worldpay', 'Linux/Unix'] },
   ],
   experience: [
     {
@@ -32,8 +22,10 @@ export const resume = {
       period: 'December 2022 – Present',
       technologies: ['Angular 14–20', 'TypeScript', 'Signals', 'Typed forms', 'NgRx', 'Tealium', 'Worldpay', 'Svelte', 'NestJS', 'CI/CD'],
       highlights: [
-        'Lead front-end engineering for the Direct Line Group insurance websites, now part of Aviva, with end-to-end ownership of the customer-facing application and delivery of hundreds of features, enhancements and defect fixes.',
+        'Lead front-end engineering for the Direct Line Group insurance websites, now part of Aviva, with end-to-end ownership of the customer-facing application and delivery of hundreds of features, enhancements and defect fixes on a two-month release cycle.',
         'Lead a team of four engineers, combining technical direction and people leadership with hands-on development.',
+        'Deliver the new business, amendments and renewals applications across three insurance brands, and the same three applications for partner brands including NatWest.',
+        'Whitelabelled the application to support multiple brands, enabling it to be reused across Aviva and partner brands.',
         'Delivered the incremental upgrade of the application from Angular 14 to Angular 20, keeping the platform current and supported.',
         'Adopted strictly typed forms and Angular signals to improve type safety and maintainability.',
         'Implemented and maintained the analytics data layer that feeds Tealium.',

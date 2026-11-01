@@ -1,6 +1,6 @@
-export interface Skill {
+export interface SkillGroup {
   readonly name: string;
-  readonly value: number;
+  readonly items: readonly string[];
 }
 
 export interface Experience {
@@ -27,8 +27,7 @@ export interface Resume {
   readonly linkedin: string;
   readonly summary: string;
   readonly strengths: readonly string[];
-  readonly software: readonly Skill[];
-  readonly languages: readonly Skill[];
+  readonly skills: readonly SkillGroup[];
   readonly experience: readonly Experience[];
   readonly education: readonly Education[];
   readonly interests: readonly string[];

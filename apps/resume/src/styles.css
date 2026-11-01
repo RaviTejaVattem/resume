@@ -34,15 +34,12 @@ h1 { margin: .6rem 0 1rem; font-size: 2rem; line-height: 1.18; letter-spacing: -
 .sidebar h2 { font-size: .72rem; letter-spacing: .13em; text-transform: uppercase; margin: 0 0 1rem; color: #b4d8c7; }
 address { display: grid; gap: .7rem; font-size: .79rem; font-style: normal; overflow-wrap: anywhere; }
 address a { text-decoration-color: #ffffff55; }
-.strengths, .skill-list { list-style: none; padding: 0; margin: 0; }
+.strengths, .skill-chips { list-style: none; padding: 0; margin: 0; }
 .strengths li { font-size: .85rem; padding: .3rem 0; }
-.skill-list { display: grid; gap: 1rem; }
-.skill-label { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; font-size: .82rem; }
-.skill-label small { color: #c8d9d4; font-size: .66rem; white-space: nowrap; }
-meter { display: block; width: 100%; height: 7px; margin-top: .35rem; border: 0; background: #ffffff22; border-radius: 9px; }
-meter::-webkit-meter-bar { background: #ffffff22; border: 0; }
-meter::-webkit-meter-optimum-value { background: #a7c9ae; }
-meter::-moz-meter-bar { background: #a7c9ae; }
+.skill-groups { display: grid; gap: 1.1rem; }
+.skill-group h3 { margin: 0 0 .45rem; font-size: .76rem; font-weight: 700; letter-spacing: .02em; color: #b4d8c7; }
+.skill-chips { display: flex; flex-wrap: wrap; gap: .3rem; }
+.skill-chips li { background: #ffffff1a; border-radius: 5px; padding: .12rem .5rem; font-size: .72rem; line-height: 1.5; }
 main { min-width: 0; padding: 3rem 3.25rem 2rem; }
 .intro { padding-bottom: 2rem; }
 .intro h2 { font-size: clamp(1.8rem, 3.3vw, 2.8rem); line-height: 1.18; letter-spacing: -.045em; margin: 1rem 0 1.5rem; }
@@ -89,13 +86,10 @@ footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--line
   .resume-sheet { display: block; margin: 0; max-width: none; box-shadow: none; border-radius: 0; overflow: visible; }
   .sidebar { background: white; color: black; padding: 0 0 1rem; border-bottom: 1px solid #aaa; }
   .sidebar header { max-width: none; }
-  .sidebar h2, .sidebar .eyebrow, .roles, .skill-label small { color: #333; }
+  .sidebar h2, .sidebar .eyebrow, .roles { color: #333; }
   .sidebar section { margin-top: 1rem; padding-top: .5rem; border-color: #ddd; }
-  .sidebar section:has(resume-skill-list) { display: inline-block; vertical-align: top; width: 48%; }
   address { display: flex; flex-wrap: wrap; gap: .4rem 1rem; }
   .strengths { display: flex; flex-wrap: wrap; gap: .3rem 1rem; }
-  .skill-list { gap: .35rem; }
-  meter { display: none; }
   main { padding: 1rem 0 0; }
   .intro { padding-bottom: .5rem; }
   .intro h2 { font-size: 20pt; }

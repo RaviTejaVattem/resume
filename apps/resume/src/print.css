@@ -27,8 +27,7 @@
 
   .sidebar {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    column-gap: 9mm;
+    grid-template-columns: minmax(0, 1fr);
     row-gap: 3mm;
     padding: 0 0 4mm;
     border-bottom: 1px solid var(--line);
@@ -37,16 +36,12 @@
     break-inside: avoid;
   }
 
-  .sidebar > header,
-  .sidebar > section:nth-of-type(1),
-  .sidebar > section:nth-of-type(2) { grid-column: 1 / -1; }
   .sidebar > header { max-width: none; }
   .sidebar .eyebrow { margin: 0 0 1mm; font-size: 8pt; color: var(--accent); letter-spacing: .12em; }
   h1 { margin: 0; font-size: 23pt; line-height: 1.15; letter-spacing: -.025em; }
   .roles { margin: 2mm 0 0; font-size: 9.5pt; color: var(--muted); }
 
-  .sidebar section,
-  .sidebar section:has(resume-skill-list) {
+  .sidebar section {
     display: block;
     width: auto;
     min-width: 0;
@@ -63,12 +58,13 @@
   .strengths li { padding: 0; font-size: 9pt; }
 
   resume-skill-list { display: block; min-width: 0; }
-  .skill-list { display: block; font-size: 9pt; line-height: 1.4; }
-  .skill-list li { display: inline; }
-  .skill-list li:not(:last-child)::after { content: ', '; }
-  .skill-label { display: inline; font-size: 9pt; }
-  .skill-label small { display: none; }
-  meter { display: none; }
+  .skill-groups { display: block; }
+  .skill-group { margin: 0 0 1mm; font-size: 9pt; line-height: 1.4; break-inside: avoid; }
+  .skill-group h3 { display: inline; margin: 0 1mm 0 0; font-size: 9pt; line-height: 1.4; color: var(--accent); letter-spacing: 0; }
+  .skill-group h3::after { content: ':'; }
+  .skill-chips { display: inline; padding: 0; margin: 0; list-style: none; }
+  .skill-chips li { display: inline; background: none; border: 0; border-radius: 0; padding: 0; font-size: 9pt; color: var(--ink); }
+  .skill-chips li:not(:last-child)::after { content: ', '; }
 
   main { padding: 4mm 0 0; }
   .intro { padding: 0; margin: 0 0 4mm; }

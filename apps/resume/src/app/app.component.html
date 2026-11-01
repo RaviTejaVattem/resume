@@ -30,13 +30,9 @@
       <h2 id="strengths-title">Strengths</h2>
       <ul class="strengths">@for (strength of resume.strengths; track strength) { <li>{{ strength }}</li> }</ul>
     </section>
-    <section aria-labelledby="software-title">
-      <h2 id="software-title">Software & tools</h2>
-      <resume-skill-list [skills]="resume.software" />
-    </section>
-    <section aria-labelledby="languages-title">
-      <h2 id="languages-title">Programming languages</h2>
-      <resume-skill-list [skills]="resume.languages" />
+    <section aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <resume-skill-list [groups]="resume.skills" />
     </section>
   </aside>
   <main id="main" tabindex="-1">
