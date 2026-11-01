@@ -9,7 +9,7 @@ export const resume = {
   linkedin: 'https://www.linkedin.com/in/leela-ravi-teja-vattem-7860ab92',
   careerStart: '2015-01-01',
   summary: 'Lead Engineer with {years}+ years of experience delivering enterprise web applications with Angular and TypeScript. Leads a team of four on the Direct Line Group insurance websites (now part of Aviva) and works with backend teams on API contracts and integration issues. Previously led UI development for a clinical patient-workflow product. Earlier full-stack experience with Node.js and Java. Focused on maintainable architecture, strongly typed, well-tested code and dependable delivery.',
-  strengths: ['Technical leadership', 'Code review and best practices', 'Clear communication', 'Self-directed learning', 'Agile delivery'],
+  strengths: ['Technical leadership', 'Mentoring', 'Code review', 'Quality engineering'],
   skills: [
     { name: 'Frontend', items: ['Angular', 'Signals', 'Strictly typed forms', 'NgRx', 'RxJS', 'Svelte', 'React', 'HTML5/CSS3'] },
     { name: 'Backend (working knowledge)', items: ['NestJS', 'Node.js', 'Express', 'REST APIs', 'SQL', 'PostgreSQL', 'Spring', 'Python'] },
@@ -86,7 +86,7 @@ export const resume = {
     },
   ],
   education: [
-    { institution: 'Jawaharlal Nehru Technological University Kakinada', qualification: 'Electronics and Communication Engineering, B.Tech', period: 'April 2010 – March 2014', result: '74.44%' },
+    { institution: 'Jawaharlal Nehru Technological University Kakinada', qualification: 'Electronics and Communication Engineering, B.Tech', period: 'April 2010 – March 2014' },
   ],
   interests: [
     'IoT projects and Linux kernel internals',

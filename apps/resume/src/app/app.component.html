@@ -68,12 +68,12 @@
         <article class="education-entry">
           <p class="period">{{ item.period }}</p>
           <h3>{{ item.institution }}</h3>
-          <p>{{ item.qualification }} <span class="result">{{ item.result }}</span></p>
+          <p>{{ item.qualification }}</p>
         </article>
       }
     </section>
     <section class="main-section" aria-labelledby="interests-title">
-      <div class="section-heading"><span aria-hidden="true">04</span><h2 id="interests-title">Beyond the code</h2></div>
+      <div class="section-heading"><span aria-hidden="true">04</span><h2 id="interests-title">Interests</h2></div>
       <ul class="interests">@for (interest of resume.interests; track interest) { <li>{{ interest }}</li> }</ul>
     </section>
     <footer>{{ resume.name }} <span>Built with care.</span></footer>

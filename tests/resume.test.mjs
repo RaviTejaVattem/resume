@@ -19,7 +19,7 @@ test('contains all expected resume sections', () => {
   assert.equal(resume.projects.length, 1);
   assert.equal(resume.education.length, 1);
   assert.equal(resume.skills.length, 4);
-  assert.equal(resume.strengths.length, 5);
+  assert.equal(resume.strengths.length, 4);
   assert.equal(resume.interests.length, 3);
   assert.deepEqual(resume.experience.map((job) => job.highlights.length), [9, 5, 3, 3]);
 });

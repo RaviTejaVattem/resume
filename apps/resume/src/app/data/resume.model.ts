@@ -27,7 +27,6 @@ export interface Education {
   readonly institution: string;
   readonly qualification: string;
   readonly period: string;
-  readonly result: string;
 }
 
 export interface Resume {
