@@ -2,18 +2,18 @@ import type { Resume } from './resume.model';
 
 export const resume = {
   name: 'Leela Ravi Teja Vattem',
-  roles: ['Angular & TypeScript', 'Node.js', 'Full-stack'],
+  roles: ['Angular & TypeScript', 'Frontend engineering', 'Team leadership'],
   location: 'London, United Kingdom',
   email: 'leelaravitejav@gmail.com',
   github: 'https://github.com/ravitejavattem',
   linkedin: 'https://www.linkedin.com/in/leela-ravi-teja-vattem-7860ab92',
   careerStart: '2015-01-01',
-  summary: 'Lead Engineer with {years}+ years of experience delivering enterprise web applications with Angular, TypeScript and Node.js. Leads a team of four on the Direct Line Group insurance websites (now part of Aviva) and works with backend teams on API contracts and integration issues. Previously led UI development for a clinical patient-workflow product. Focused on maintainable architecture, strongly typed, well-tested code and dependable delivery.',
+  summary: 'Lead Engineer with {years}+ years of experience delivering enterprise web applications with Angular and TypeScript. Leads a team of four on the Direct Line Group insurance websites (now part of Aviva) and works with backend teams on API contracts and integration issues. Previously led UI development for a clinical patient-workflow product. Earlier full-stack experience with Node.js and Java. Focused on maintainable architecture, strongly typed, well-tested code and dependable delivery.',
   strengths: ['Technical leadership', 'Code review and best practices', 'Clear communication', 'Self-directed learning', 'Agile delivery'],
   skills: [
     { name: 'Frontend', items: ['Angular', 'Signals', 'Strictly typed forms', 'NgRx', 'RxJS', 'Svelte', 'React', 'HTML5/CSS3'] },
-    { name: 'Backend & data', items: ['Node.js', 'NestJS', 'Express', 'REST APIs', 'Spring', 'SQL', 'PostgreSQL'] },
-    { name: 'Languages', items: ['TypeScript', 'JavaScript', 'Java', 'Python'] },
+    { name: 'Backend (working knowledge)', items: ['NestJS', 'Node.js', 'Express', 'REST APIs', 'SQL', 'PostgreSQL', 'Spring', 'Python'] },
+    { name: 'Languages', items: ['TypeScript', 'JavaScript', 'Java'] },
     { name: 'Tooling & integrations', items: ['Git', 'Nx', 'CI/CD', 'Tealium', 'Worldpay', 'Linux/Unix'] },
   ],
   experience: [
