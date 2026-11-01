@@ -2,12 +2,12 @@ import type { Resume } from './resume.model';
 
 export const resume = {
   name: 'Leela Ravi Teja Vattem',
-  roles: ['Senior Software Engineer', 'Angular & TypeScript', 'Full-stack'],
+  roles: ['Lead Engineer', 'Angular & TypeScript', 'Full-stack'],
   location: 'London, United Kingdom',
   email: 'ravitejavattem@gmail.com',
   github: 'https://github.com/ravitejavattem',
   linkedin: 'https://www.linkedin.com/in/leela-ravi-teja-vattem-7860ab92',
-  summary: 'Senior software engineer with 11+ years of experience building enterprise web applications and services with Angular, TypeScript and Node.js. Has led UI development for a clinical patient-workflow product, set code-review standards and worked in large agile programmes. Now stepping up to a lead engineer role, focused on maintainable architecture, typed and well-tested code, and reliable CI.',
+  summary: 'Lead engineer with 11+ years of experience delivering enterprise web applications and services with Angular, TypeScript and Node.js. Currently leads a team of four on the front end of the Direct Line Group insurance websites, now part of Aviva, and works closely with backend teams to agree API contracts and resolve integration issues. Previously led UI development for a clinical patient-workflow product. Committed to maintainable architecture, strongly typed and well-tested code, and dependable delivery.',
   strengths: ['Technical leadership', 'Code review and best practices', 'Clear communication', 'Self-directed learning', 'Agile delivery'],
   software: [
     { name: 'Angular', value: 80 },
@@ -27,15 +27,18 @@ export const resume = {
   ],
   experience: [
     {
-      role: 'Senior Software Engineer',
-      company: 'Aviva PLC',
+      role: 'Lead Engineer',
+      company: 'Aviva PLC (Direct Line Group)',
       period: 'December 2022 – Present',
-      technologies: ['Angular', 'TypeScript', 'Signals', 'Typed forms', 'NgRx', 'Svelte', 'NestJS', 'Node.js', 'CI/CD'],
+      technologies: ['Angular 14–20', 'TypeScript', 'Signals', 'Typed forms', 'NgRx', 'Tealium', 'Worldpay', 'Svelte', 'NestJS', 'CI/CD'],
       highlights: [
-        'Build and maintain enterprise web applications with Angular and TypeScript, using signals for local state and NgRx selectors for shared state.',
-        'Migrate legacy forms to strictly typed reactive forms, improving type safety and maintainability.',
-        'Develop NestJS mock servers and Svelte-based tooling that support front-end development and testing.',
-        'Improve CI, linting and testing workflows to keep delivery reliable.',
+        'Lead front-end engineering for the Direct Line Group insurance websites, now part of Aviva, with end-to-end ownership of the customer-facing application and delivery of hundreds of features, enhancements and defect fixes.',
+        'Lead a team of four engineers, combining technical direction and people leadership with hands-on development.',
+        'Delivered the incremental upgrade of the application from Angular 14 to Angular 20, keeping the platform current and supported.',
+        'Adopted strictly typed forms and Angular signals to improve type safety and maintainability.',
+        'Implemented and maintained the analytics data layer that feeds Tealium.',
+        'Developed the payments journey using Worldpay JS, validating the integration in the Worldpay sandbox.',
+        'Serve as the primary technical liaison to multiple backend teams, agreeing API contracts and resolving day-to-day integration issues.',
       ],
     },
     {

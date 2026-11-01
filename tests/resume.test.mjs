@@ -16,11 +16,11 @@ test('contains all expected resume sections', () => {
   assert.equal(resume.languages.length, 4);
   assert.equal(resume.strengths.length, 5);
   assert.equal(resume.interests.length, 11);
-  assert.deepEqual(resume.experience.map((job) => job.highlights.length), [4, 5, 3, 3]);
+  assert.deepEqual(resume.experience.map((job) => job.highlights.length), [7, 5, 3, 3]);
 });
 
 test('employment history is current and in order', () => {
-  assert.equal(resume.experience[0].company, 'Aviva PLC');
+  assert.equal(resume.experience[0].company, 'Aviva PLC (Direct Line Group)');
   assert.match(resume.experience[0].period, /Present$/);
   assert.match(resume.experience[1].period, /December 2022$/);
   assert.equal(resume.experience.filter((job) => /Present$/.test(job.period)).length, 1);
