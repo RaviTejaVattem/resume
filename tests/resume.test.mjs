@@ -7,15 +7,23 @@ const source = await readFile(new URL('../apps/resume/src/app/data/resume.data.t
 const { outputText } = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } });
 const { resume } = await import(`data:text/javascript;base64,${Buffer.from(outputText).toString('base64')}`);
 
-test('preserves all original resume sections', () => {
+test('contains all expected resume sections', () => {
   assert.equal(resume.name, 'Leela Ravi Teja Vattem');
-  assert.equal(resume.experience.length, 3);
+  assert.equal(resume.location, 'London, United Kingdom');
+  assert.equal(resume.experience.length, 4);
   assert.equal(resume.education.length, 3);
   assert.equal(resume.software.length, 8);
   assert.equal(resume.languages.length, 4);
   assert.equal(resume.strengths.length, 5);
   assert.equal(resume.interests.length, 11);
-  assert.deepEqual(resume.experience.map((job) => job.highlights.length), [7, 3, 3]);
+  assert.deepEqual(resume.experience.map((job) => job.highlights.length), [4, 5, 3, 3]);
+});
+
+test('employment history is current and in order', () => {
+  assert.equal(resume.experience[0].company, 'Aviva PLC');
+  assert.match(resume.experience[0].period, /Present$/);
+  assert.match(resume.experience[1].period, /December 2022$/);
+  assert.equal(resume.experience.filter((job) => /Present$/.test(job.period)).length, 1);
 });
 
 test('links and skill values are valid', () => {
