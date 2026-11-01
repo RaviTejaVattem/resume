@@ -1,6 +1,6 @@
 # Resume
 
-A standalone, zoneless Angular resume with Nx task orchestration, a responsive editorial layout and print styles. Resume content lives in `apps/resume/src/app/data/resume.data.ts`; its interfaces live beside it. Static content stays static. Signal inputs define the skill-list component API; a signal handles avatar failure. There are no active NgModules, HTTP avatar calls, Material, Flex Layout, Day.js, Sass or icon-font dependencies.
+A standalone, zoneless Angular resume with Nx task orchestration, a responsive on-screen layout and a dedicated A4 print layout. The target is a resume that reads well on screen and prints to **two A4 pages or fewer**.
 
 ## Run
 
@@ -11,21 +11,61 @@ npm install
 npm start
 ```
 
-Use Node 24.15 or newer within Node 24. `npm test` checks content invariants. `npm run build` performs a strict Angular production compilation. `npm run deploy` builds with the GitHub Pages `/resume/` base path. The output is `dist/resume/browser`.
+Use Node 24.15 or newer within Node 24.
+
+| Command | Purpose |
+| --- | --- |
+| `npm start` | Serve the app locally. |
+| `npm test` | Run the content and helper tests (`node --test tests/resume.test.mjs`). |
+| `npm run build` | Strict Angular production compilation. |
+| `npm run check` | Tests, then build. |
+| `npm run deploy` | Build with the GitHub Pages `/resume/` base path. Output: `dist/resume/browser`. |
+
+## Printing to PDF
+
+Use the **Print / Save PDF** button, or the browser print dialog. Choose A4 and the default margins, and leave background graphics off. The page title (`apps/resume/src/index.html`) becomes the default file name. After any content change, print to PDF and confirm the result is still two pages or fewer; the tests below only limit content size, they cannot count pages.
+
+Print-only layout lives in `apps/resume/src/print.css`: a single-column reading order, skills as one compact line per group, and underlined project links.
+
+## Editing the content
+
+All content lives in `apps/resume/src/app/data/resume.data.ts`, typed by `resume.model.ts` and declared with `as const satisfies Resume`.
+
+- **Years of experience:** the summary contains a `{years}` placeholder. `careerStart` (an ISO date) is the single source of truth, and `data/experience-years.ts` computes the completed years when the page loads. Do not hardcode the number.
+- **Skills:** grouped lists (`skills`), not percentage bars. Each group renders as chips on screen and as one comma-separated line in print.
+- **Experience:** one entry per role with technology tags and highlights.
+- **Projects:** one entry with a summary line, highlights and labelled links.
+- **Education and interests:** deliberately short to protect the print budget.
+
+The summary, headline and roles line are positioned for a lead engineer role, with frontend (Angular and TypeScript) first and backend listed as working knowledge. Keep claims factual: figures such as install counts, coverage and team size come from the owner and should be rechecked before sending the resume.
 
 ## Structure
 
-- `data/`: readonly typed resume content.
-- `components/skill-list.component.ts`: reusable presentation component with signal input.
-- `app.component.ts` and `.html`: semantic page composition and print action.
-- `styles.css`: shared design tokens, responsive layout and print rules.
+- `apps/resume/src/app/data/`: typed resume content, the model and the years helper.
+- `apps/resume/src/app/components/skill-list.component.ts`: reusable presentation component with a signal input (`groups`).
+- `apps/resume/src/app/app.component.ts` and `.html`: semantic page composition, the computed summary and the print action. A signal handles avatar load failure.
+- `apps/resume/src/styles.css`: shared design tokens and the responsive screen layout.
+- `apps/resume/src/print.css`: the A4 print layout.
+- `tests/resume.test.mjs`: content invariants and helper tests.
 
-The original `libs/` files and unused Angular 12 source/config files remain only as historical reference; the new entry point imports none of them. `.nxignore` excludes the old libraries and end-to-end project. The root Angular workspace file no longer defines the legacy targets; the active target configuration is `apps/resume/project.json`.
+There are no active NgModules, Material, Flex Layout, Day.js, Sass or icon-font dependencies. The avatar is an image loaded from GitHub with an initials fallback.
 
-## Verification and lockfile
+## Tests
 
-This rebuild was prepared through GitHub file APIs, not a local Node/browser runtime. Installation, compiler success, visual rendering, keyboard navigation and print pagination are NOT yet verified. CI runs installation, content checks and a production build. It uploads the regenerated package-lock.json as an artifact. Review and commit that generated lockfile, then replace `npm install` with `npm ci` in CI. The inherited Angular 12 lockfile is not the new dependency lock. Do not merge until CI passes and desktop/mobile/print layouts have been checked.
+`npm test` checks that:
 
-All original employment details, dates, skill values and interests are retained. The original summary still says `~7 years` and the original job still says `Present`; these are preserved source claims, not newly verified current employment facts.
+- the expected sections and counts are present, including the Aviva highlights and the single "Present" role;
+- the years helper is correct around anniversaries, and the summary still uses the `{years}` placeholder;
+- content stays within a print budget (at most 4 interests, 1 education entry and 1 project);
+- skill groups are non-empty with no duplicates, and key skills are present;
+- every link uses `https`.
 
-GitHub Pages must be configured to deploy using GitHub Actions. Rebuild-branch pushes build only; production deployment happens only from main.
+## CI, lockfile and deployment
+
+CI (`.github/workflows/build-deploy.yml`) installs, runs the tests and builds. It runs on pushes to `main` and `feat/resume-rebuild` and on pull requests to `main`, and uploads the regenerated `package-lock.json` as an artifact. Commit a lockfile generated by a local `npm install`, then replace `npm install` with `npm ci` in CI.
+
+GitHub Pages must be configured to deploy using GitHub Actions. Production deployment happens only from `main`; other branches build only.
+
+## Legacy files
+
+The original `libs/` files, `app.module.ts` and the unused Angular 12 source and config files remain only as historical reference; the entry point imports none of them. `.nxignore` excludes the old libraries and the end-to-end project. The active target configuration is `apps/resume/project.json`.
