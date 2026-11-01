@@ -2,12 +2,12 @@ import type { Resume } from './resume.model';
 
 export const resume = {
   name: 'Leela Ravi Teja Vattem',
-  roles: ['Lead Engineer', 'Angular & TypeScript', 'Full-stack'],
+  roles: ['Angular & TypeScript', 'Node.js', 'Full-stack'],
   location: 'London, United Kingdom',
   email: 'ravitejavattem@gmail.com',
   github: 'https://github.com/ravitejavattem',
   linkedin: 'https://www.linkedin.com/in/leela-ravi-teja-vattem-7860ab92',
-  summary: 'Lead engineer with 11+ years of experience delivering enterprise web applications and services with Angular, TypeScript and Node.js. Currently leads a team of four on the front end of the Direct Line Group insurance websites, now part of Aviva, and works closely with backend teams to agree API contracts and resolve integration issues. Previously led UI development for a clinical patient-workflow product. Committed to maintainable architecture, strongly typed and well-tested code, and dependable delivery.',
+  summary: 'Lead Engineer with 11+ years of experience delivering enterprise web applications with Angular, TypeScript and Node.js. Leads a team of four on the Direct Line Group insurance websites (now part of Aviva) and works with backend teams on API contracts and integration issues. Previously led UI development for a clinical patient-workflow product. Focused on maintainable architecture, strongly typed, well-tested code and dependable delivery.',
   strengths: ['Technical leadership', 'Code review and best practices', 'Clear communication', 'Self-directed learning', 'Agile delivery'],
   skills: [
     { name: 'Frontend', items: ['Angular', 'Signals', 'Strictly typed forms', 'NgRx', 'RxJS', 'Svelte', 'React', 'HTML5/CSS3'] },
