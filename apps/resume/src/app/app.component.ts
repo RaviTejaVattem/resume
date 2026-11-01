@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { SkillListComponent } from './components/skill-list.component';
+import { yearsSince } from './data/experience-years';
+import { resume } from './data/resume.data';
 
 @Component({
   selector: 'resume-root',
+  imports: [SkillListComponent],
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.scss' ]
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent  {
-  name = 'Angular';
+export class AppComponent {
+  readonly resume = resume;
+  readonly summary = resume.summary.replace('{years}', String(yearsSince(resume.careerStart)));
+  readonly avatarFailed = signal(false);
+  readonly initials = computed(() => this.resume.name.split(' ').map((part) => part[0]).slice(0, 2).join(''));
+
+  displayUrl(url: string): string {
+    return url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+  }
+
+  printResume(): void {
+    window.print();
+  }
 }
