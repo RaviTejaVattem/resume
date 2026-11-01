@@ -11,16 +11,18 @@ test('contains all expected resume sections', () => {
   assert.equal(resume.name, 'Leela Ravi Teja Vattem');
   assert.equal(resume.location, 'London, United Kingdom');
   assert.equal(resume.experience.length, 4);
+  assert.equal(resume.projects.length, 1);
   assert.equal(resume.education.length, 1);
   assert.equal(resume.skills.length, 4);
   assert.equal(resume.strengths.length, 5);
-  assert.equal(resume.interests.length, 4);
+  assert.equal(resume.interests.length, 3);
   assert.deepEqual(resume.experience.map((job) => job.highlights.length), [9, 5, 3, 3]);
 });
 
 test('keeps content within the two-page print budget', () => {
   assert.ok(resume.interests.length <= 4);
   assert.ok(resume.education.length <= 1);
+  assert.ok(resume.projects.length <= 1);
   assert.ok(resume.experience.every((job) => job.technologies.length > 0));
 });
 
@@ -42,5 +44,6 @@ test('employment history is current and in order', () => {
 });
 
 test('links are valid', () => {
-  for (const link of [resume.github, resume.linkedin]) assert.equal(new URL(link).protocol, 'https:');
+  const links = [resume.github, resume.linkedin, ...resume.projects.flatMap((project) => project.links.map((link) => link.url))];
+  for (const link of links) assert.equal(new URL(link).protocol, 'https:');
 });

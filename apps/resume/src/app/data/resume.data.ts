@@ -69,11 +69,25 @@ export const resume = {
       ],
     },
   ],
+  projects: [
+    {
+      name: 'Angular Karma Test Extension for VS Code',
+      summary: 'Open source · 500+ installs',
+      highlights: [
+        'Built a VS Code extension to discover, run, debug and check coverage for Angular tests, using the VS Code Testing API. It parses spec files with the TypeScript parser, runs tests on a persistent Karma server with a custom reporter streaming results over socket.io, and loads Istanbul coverage into the editor.',
+        'Wrote a technical blog post on dev.to explaining the VS Code Testing API and how the extension is built.',
+      ],
+      links: [
+        { label: 'VS Code Marketplace', url: 'https://marketplace.visualstudio.com/items?itemName=ravitejavattem.angular-testing' },
+        { label: 'GitHub', url: 'https://github.com/RaviTejaVattem/vscode-testing-extension' },
+        { label: 'Blog post', url: 'https://dev.to/ravitejavattem/custom-angular-and-karma-test-extension-for-vs-code-3b3b' },
+      ],
+    },
+  ],
   education: [
     { institution: 'Jawaharlal Nehru Technological University Kakinada', qualification: 'Electronics and Communication Engineering, B.Tech', period: 'April 2010 – March 2014', result: '74.44%' },
   ],
   interests: [
-    'Open source contributions, coding challenges and hackathons',
     'IoT projects and Linux kernel internals',
     'Cloud computing and software security',
     'Cricket, table tennis, carom and chess',

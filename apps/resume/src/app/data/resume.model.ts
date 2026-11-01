@@ -11,6 +11,18 @@ export interface Experience {
   readonly highlights: readonly string[];
 }
 
+export interface ProjectLink {
+  readonly label: string;
+  readonly url: string;
+}
+
+export interface Project {
+  readonly name: string;
+  readonly summary: string;
+  readonly highlights: readonly string[];
+  readonly links: readonly ProjectLink[];
+}
+
 export interface Education {
   readonly institution: string;
   readonly qualification: string;
@@ -29,6 +41,7 @@ export interface Resume {
   readonly strengths: readonly string[];
   readonly skills: readonly SkillGroup[];
   readonly experience: readonly Experience[];
+  readonly projects: readonly Project[];
   readonly education: readonly Education[];
   readonly interests: readonly string[];
 }

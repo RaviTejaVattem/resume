@@ -52,8 +52,18 @@
         </article>
       }
     </section>
+    <section class="main-section" aria-labelledby="projects-title">
+      <div class="section-heading"><span aria-hidden="true">02</span><h2 id="projects-title">Projects</h2></div>
+      @for (project of resume.projects; track project.name) {
+        <article class="experience-entry">
+          <div class="entry-topline"><p class="company">{{ project.name }}</p><p class="period">{{ project.summary }}</p></div>
+          <ul class="highlights">@for (highlight of project.highlights; track $index) { <li>{{ highlight }}</li> }</ul>
+          <p class="project-links">@for (link of project.links; track link.url) { <a [href]="link.url" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>@if (!$last) { <span aria-hidden="true"> · </span> } }</p>
+        </article>
+      }
+    </section>
     <section class="main-section" aria-labelledby="education-title">
-      <div class="section-heading"><span aria-hidden="true">02</span><h2 id="education-title">Education</h2></div>
+      <div class="section-heading"><span aria-hidden="true">03</span><h2 id="education-title">Education</h2></div>
       @for (item of resume.education; track item.institution) {
         <article class="education-entry">
           <p class="period">{{ item.period }}</p>
@@ -63,7 +73,7 @@
       }
     </section>
     <section class="main-section" aria-labelledby="interests-title">
-      <div class="section-heading"><span aria-hidden="true">03</span><h2 id="interests-title">Beyond the code</h2></div>
+      <div class="section-heading"><span aria-hidden="true">04</span><h2 id="interests-title">Beyond the code</h2></div>
       <ul class="interests">@for (interest of resume.interests; track interest) { <li>{{ interest }}</li> }</ul>
     </section>
     <footer>{{ resume.name }} <span>Built with care.</span></footer>
