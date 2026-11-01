@@ -31,6 +31,7 @@ export interface Education {
 
 export interface Resume {
   readonly name: string;
+  readonly title: string;
   readonly roles: readonly string[];
   readonly location: string;
   readonly email: string;

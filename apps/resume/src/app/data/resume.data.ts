@@ -2,6 +2,7 @@ import type { Resume } from './resume.model';
 
 export const resume = {
   name: 'Leela Ravi Teja Vattem',
+  title: 'Lead Engineer',
   roles: ['Angular & TypeScript', 'Frontend engineering', 'Team leadership'],
   location: 'London, United Kingdom',
   email: 'leelaravitejav@gmail.com',
@@ -44,7 +45,7 @@ export const resume = {
         'Designed and delivered features with Angular 10, TypeScript, Nx, NgRx and RxJS, building the UI components and modules for client requirements.',
         'Contributed to backend REST services and the database layer.',
         'Reviewed code in GitLab and coached the team on best practices.',
-        'Worked in a Scrum of Scrums with two-week sprints and programme-increment planning, and presented sprint demos to the product team.',
+        'Worked in an Agile team within a Scrum of Scrums, with two-week sprints and programme-increment planning, and presented sprint demos to the product team.',
       ],
     },
     {

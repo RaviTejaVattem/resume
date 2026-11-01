@@ -15,6 +15,7 @@
       </div>
       <p class="eyebrow">LEAD ENGINEER</p>
       <h1>{{ resume.name }}</h1>
+      <p class="print-title" hidden>{{ resume.title }}</p>
       <p class="roles">{{ resume.roles.join(' · ') }}</p>
     </header>
     <section aria-labelledby="contact-title">
@@ -22,8 +23,8 @@
       <address>
         <span>{{ resume.location }}</span>
         <a [href]="'mailto:' + resume.email">{{ resume.email }}</a>
-        <a [href]="resume.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-        <a [href]="resume.github" target="_blank" rel="noopener noreferrer">GitHub · Ravi Teja Vattem <span aria-hidden="true">↗</span></a>
+        <a [href]="resume.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="print-url" hidden> {{ displayUrl(resume.linkedin) }}</span></a>
+        <a [href]="resume.github" target="_blank" rel="noopener noreferrer">GitHub · Ravi Teja Vattem <span aria-hidden="true">↗</span><span class="print-url" hidden> {{ displayUrl(resume.github) }}</span></a>
       </address>
     </section>
     <section aria-labelledby="strengths-title">
@@ -39,6 +40,7 @@
     <section class="intro" aria-labelledby="intro-title">
       <p class="eyebrow">PROFILE / OVERVIEW</p>
       <h2 id="intro-title">Lead Engineer<br><span>Angular &amp; TypeScript</span></h2>
+      <h2 class="print-summary-title" hidden>Summary</h2>
       <p>{{ summary }}</p>
     </section>
     <section class="main-section" aria-labelledby="experience-title">

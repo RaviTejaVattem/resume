@@ -15,6 +15,10 @@ export class AppComponent {
   readonly avatarFailed = signal(false);
   readonly initials = computed(() => this.resume.name.split(' ').map((part) => part[0]).slice(0, 2).join(''));
 
+  displayUrl(url: string): string {
+    return url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+  }
+
   printResume(): void {
     window.print();
   }
