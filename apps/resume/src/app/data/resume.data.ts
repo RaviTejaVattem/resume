@@ -20,7 +20,7 @@ export const resume = {
       role: 'Lead Engineer',
       company: 'Aviva PLC (Direct Line Group)',
       period: 'December 2022 – Present',
-      technologies: ['Angular 14–20', 'TypeScript', 'Signals', 'Typed forms', 'NgRx', 'Tealium', 'Worldpay', 'Svelte', 'NestJS', 'CI/CD'],
+      technologies: ['Angular 14–20', 'TypeScript', 'Signals', 'Typed forms', 'NgRx', 'Tealium', 'Worldpay', 'NestJS'],
       highlights: [
         'Lead front-end engineering for the Direct Line Group insurance websites, now part of Aviva, with end-to-end ownership of the customer-facing application and delivery of hundreds of features, enhancements and defect fixes on a two-month release cycle.',
         'Lead a team of four engineers, combining technical direction and people leadership with hands-on development.',
