@@ -4,7 +4,7 @@ export const resume = {
   name: 'Leela Ravi Teja Vattem',
   roles: ['Angular & TypeScript', 'Node.js', 'Full-stack'],
   location: 'London, United Kingdom',
-  email: 'ravitejavattem@gmail.com',
+  email: 'leelaravitejav@gmail.com',
   github: 'https://github.com/ravitejavattem',
   linkedin: 'https://www.linkedin.com/in/leela-ravi-teja-vattem-7860ab92',
   summary: 'Lead Engineer with 11+ years of experience delivering enterprise web applications with Angular, TypeScript and Node.js. Leads a team of four on the Direct Line Group insurance websites (now part of Aviva) and works with backend teams on API contracts and integration issues. Previously led UI development for a clinical patient-workflow product. Focused on maintainable architecture, strongly typed, well-tested code and dependable delivery.',
