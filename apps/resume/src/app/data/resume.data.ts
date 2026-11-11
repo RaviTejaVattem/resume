@@ -26,14 +26,13 @@ export const resume = {
       highlights: [
         'Lead front-end engineering for the Direct Line Group insurance websites, now part of Aviva, with end-to-end ownership of the customer-facing application and delivery of hundreds of features, enhancements and defect fixes on a two-month release cycle.',
         'Lead a team of four engineers, mentoring and coaching two of them on code quality, and run architecture and feature review sessions that weigh the trade-offs of competing approaches.',
-        'Deliver the new business, amendments and renewals applications across three insurance brands, and the same three applications for partner brands including NatWest.',
-        'Whitelabelled the application so each of the three brands can be tailored independently, making brand-specific changes straightforward to deliver.',
+        'Work hands-on with Guidewire Edge APIs for the Guidewire Quote & Buy Portal, with in-depth knowledge of how the quote lifecycle operates in the backend.',
+        'Deliver the new business, amendments and renewals applications across three insurance brands and partner brands including NatWest, whitelabelled so each brand can be tailored independently.',
         'Drive engineering quality through CI gates: pull requests fail below 80% test coverage or with formatting violations, and JFrog scanning checks for security issues. Coverage is now around 94%.',
         'Delivered the year-long upgrade from Angular 14 to Angular 20 with no production incidents, moving from 14 to 18 in one step and then version by version. It also shortened build times with esbuild.',
         'Introduced strictly typed forms and signals, adding types across the application and migrating feature by feature to avoid a big-bang rewrite.',
         'Own the Tealium analytics data layer, working with the analytics team to track and reduce error rates, and built the payments journey with Worldpay JS.',
         'Serve as the primary technical liaison to multiple backend teams, agreeing API contracts and resolving day-to-day integration issues.',
-        'Worked with Guidewire Edge APIs for the Guidewire Quote & Buy Portal, with working knowledge of the backend quote lifecycle and how it operates.',
       ],
     },
     {
