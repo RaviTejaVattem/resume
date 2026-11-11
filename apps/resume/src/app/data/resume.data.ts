@@ -15,7 +15,7 @@ export const resume = {
     { name: 'Frontend', items: ['Angular', 'Signals', 'Strictly typed forms', 'NgRx', 'RxJS', 'Svelte', 'React', 'HTML5/CSS3'] },
     { name: 'Backend (working knowledge)', items: ['NestJS', 'Node.js', 'Express', 'REST APIs', 'SQL', 'PostgreSQL', 'Spring', 'Python'] },
     { name: 'Languages', items: ['TypeScript', 'JavaScript', 'Java'] },
-    { name: 'Tooling & integrations', items: ['Git', 'Nx', 'CI/CD', 'Tealium', 'Worldpay', 'Linux/Unix'] },
+    { name: 'Tooling & integrations', items: ['Git', 'Nx', 'CI/CD', 'Tealium', 'Worldpay', 'Guidewire Edge APIs', 'Linux/Unix'] },
   ],
   experience: [
     {
@@ -26,7 +26,7 @@ export const resume = {
       highlights: [
         'Lead front-end engineering for the Direct Line Group insurance websites, now part of Aviva, with end-to-end ownership of the customer-facing application and delivery of hundreds of features, enhancements and defect fixes on a two-month release cycle.',
         'Lead a team of four engineers, mentoring and coaching two of them on code quality, and run architecture and feature review sessions that weigh the trade-offs of competing approaches.',
-        'Work hands-on with Guidewire Edge APIs for the Guidewire Quote & Buy Portal, with in-depth knowledge of how the quote lifecycle operates in the backend.',
+        'Work on the Angular front end that consumes Guidewire Edge APIs for the Guidewire Quote & Buy Portal, with a solid understanding of the quote and policy lifecycle and the APIs the front end uses.',
         'Deliver the new business, amendments and renewals applications across three insurance brands and partner brands including NatWest, whitelabelled so each brand can be tailored independently.',
         'Drive engineering quality through CI gates: pull requests fail below 80% test coverage or with formatting violations, and JFrog scanning checks for security issues. Coverage is now around 94%.',
         'Delivered the year-long upgrade from Angular 14 to Angular 20 with no production incidents, moving from 14 to 18 in one step and then version by version. It also shortened build times with esbuild.',
