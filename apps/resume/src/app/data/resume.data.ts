@@ -22,7 +22,7 @@ export const resume = {
       role: 'Lead Engineer',
       company: 'Aviva PLC (Direct Line Group)',
       period: 'December 2022 – Present',
-      technologies: ['Angular 14–20', 'TypeScript', 'Signals', 'Typed forms', 'NgRx', 'Tealium', 'Worldpay', 'NestJS'],
+      technologies: ['Angular 14–20', 'TypeScript', 'Signals', 'Typed forms', 'NgRx', 'Tealium', 'Worldpay', 'NestJS', 'Guidewire Edge APIs'],
       highlights: [
         'Lead front-end engineering for the Direct Line Group insurance websites, now part of Aviva, with end-to-end ownership of the customer-facing application and delivery of hundreds of features, enhancements and defect fixes on a two-month release cycle.',
         'Lead a team of four engineers, mentoring and coaching two of them on code quality, and run architecture and feature review sessions that weigh the trade-offs of competing approaches.',
@@ -33,6 +33,7 @@ export const resume = {
         'Introduced strictly typed forms and signals, adding types across the application and migrating feature by feature to avoid a big-bang rewrite.',
         'Own the Tealium analytics data layer, working with the analytics team to track and reduce error rates, and built the payments journey with Worldpay JS.',
         'Serve as the primary technical liaison to multiple backend teams, agreeing API contracts and resolving day-to-day integration issues.',
+        'Worked with Guidewire Edge APIs for the Guidewire Quote & Buy Portal, with working knowledge of the backend quote lifecycle and how it operates.',
       ],
     },
     {
